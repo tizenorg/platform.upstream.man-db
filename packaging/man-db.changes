@@ -1,3 +1,7 @@
+* Fri Mar 15 2013 Patrick McCarty <patrick.mccarty@linux.intel.com> 86d3c5b
+- Remove /bin/mktemp dependency, since this is satisfied by coreutils
+- Remove /usr/bin/zsoelim, provided by the groff package instead
+
 * Mon Mar 11 2013 Patrick McCarty <patrick.mccarty@linux.intel.com> upstream/2.6.3@52bf9dc
 - Add packaging
 - Imported Upstream version 2.6.3

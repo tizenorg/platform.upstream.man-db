@@ -10,7 +10,6 @@ BuildRequires:  db4-devel
 BuildRequires:  gettext
 BuildRequires:  groff
 BuildRequires:  pkgconfig(libpipeline)
-Requires:       /bin/mktemp
 Requires:       bzip2
 Requires:       coreutils
 Requires:       groff >= 1.18
@@ -52,6 +51,9 @@ make %{?_smp_mflags}
 
 rm -rf %{buildroot}%{_datadir}/doc/man-db
 
+# groff provides this file
+rm %{buildroot}%{_bindir}/zsoelim
+
 
 %lang_package
 
@@ -66,7 +68,6 @@ rm -rf %{buildroot}%{_datadir}/doc/man-db
 %{_bindir}/mandb
 %{_bindir}/manpath
 %{_bindir}/whatis
-%{_bindir}/zsoelim
 %{_sbindir}/accessdb
 %{_libdir}/man-db/libman-2.6.3.so
 %{_libdir}/man-db/libman.so
