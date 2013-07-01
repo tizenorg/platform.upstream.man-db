@@ -6,6 +6,7 @@ Summary:        A set of documentation tools: man, apropos and whatis
 Url:            http://man-db.nongnu.org/
 Group:          System/Base
 Source:         %{name}-%{version}.tar.xz
+Source1001: 	man-db.manifest
 BuildRequires:  db4-devel
 BuildRequires:  gettext
 BuildRequires:  groff
@@ -31,6 +32,7 @@ primary way to find documentation on a Linux system.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --libdir=%{_libdir} \
@@ -60,6 +62,7 @@ rm %{buildroot}%{_bindir}/zsoelim
 %docs_package
 
 %files
+%manifest %{name}.manifest
 %config(noreplace) %{_sysconfdir}/man_db.conf
 %{_bindir}/apropos
 %{_bindir}/catman
